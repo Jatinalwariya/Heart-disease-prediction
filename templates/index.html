@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction</title>
+</head>
+<body>
+    <h2>Heart Disease Prediction Form</h2>
+    <form action="/predict" method="post">
+        Age: <input type="number" name="age" required><br><br>
+        Sex (1=Male,0=Female): <input type="number" name="sex" required><br><br>
+        Resting BP: <input type="number" name="trestbps" required><br><br>
+        Cholesterol: <input type="number" name="chol" required><br><br>
+        Fasting Blood Sugar (>120 mg/dl) (1=True,0=False): <input type="number" name="fbs" required><br><br>
+        Rest ECG (0,1,2): <input type="number" name="restecg" required><br><br>
+        Max Heart Rate: <input type="number" name="thalach" required><br><br>
+        Exercise induced angina (1=Yes,0=No): <input type="number" name="exang" required><br><br>
+        Oldpeak: <input type="text" name="oldpeak" required><br><br>
+        Number of major vessels (0-3): <input type="number" name="ca" required><br><br>
+
+        <!-- One-hot encoded inputs -->
+        CP_1: <input type="number" name="cp_1" required><br><br>
+        CP_2: <input type="number" name="cp_2" required><br><br>
+        CP_3: <input type="number" name="cp_3" required><br><br>
+
+        Thal_1: <input type="number" name="thal_1" required><br><br>
+        Thal_2: <input type="number" name="thal_2" required><br><br>
+        Thal_3: <input type="number" name="thal_3" required><br><br>
+
+        Slope_1: <input type="number" name="slope_1" required><br><br>
+        Slope_2: <input type="number" name="slope_2" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+    <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
